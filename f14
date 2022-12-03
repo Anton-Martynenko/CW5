@@ -1,0 +1,8 @@
+function squareSum(numbers){
+  let result = 0;
+    for (var i = 0, len = numbers.length; i < len; i++) {
+    result += Math.pow(numbers[i], 2);
+    }
+
+    return result;
+}
