@@ -1,0 +1,11 @@
+function accum(s) {
+	let sArray = s.split('')
+  let result = []
+  let w = 0
+   for(let i = 0 ; i < sArray.length ; i++){
+     w = sArray[i].toUpperCase()+sArray[i].toLowerCase().repeat(i).trim()
+     result.push(w)     
+     
+   } 
+    return result.join('-')
+}
