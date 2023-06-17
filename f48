@@ -1,0 +1,12 @@
+function bubblesortOnce(a) {
+  let aCopy = [...a];
+  for (let j = 0; j < (aCopy.length - 1); j++) {
+   if (aCopy[j] > aCopy[j + 1]) { 
+                
+                let temp = aCopy[j]
+                aCopy[j] = aCopy[j + 1]
+                aCopy[j + 1] = temp
+             }
+    }
+  return aCopy;
+}
