@@ -1,0 +1,16 @@
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function toArray(head, index = null, max_length = 1) { // still short circuits :)
+  var arr;
+  for(arr=[]; head instanceof Node && arr.length < max_length; head=head.next) 
+    arr.push(head);
+  return index !== null ? arr[index] : arr;
+}
+
+function getNth(node, index) {
+  var found_node = toArray(node, index, index + 1);
+  return found_node instanceof Node ? found_node : (() => {throw new Error()})();
+}
