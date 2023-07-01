@@ -1,0 +1,8 @@
+function getFreeUrinals(urinals){
+  if (urinals.includes("11")) { 
+    return -1 
+  } else {    
+    const free = urinals.match(/(^|0)0(?!1)/g);
+    return  free ? free.length : 0;   
+  }
+}
