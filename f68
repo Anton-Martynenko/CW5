@@ -1,0 +1,7 @@
+function binaryPyramid(m,n){
+  let arr =[];
+  for (let i = m; i <= n; i++){
+    arr.push(i);
+  }
+  return arr.reduce((a, v) => a+v.toString(2) * 1,0).toString(2)
+}
