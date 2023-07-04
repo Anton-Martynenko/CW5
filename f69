@@ -1,0 +1,10 @@
+function findArray(arr1, arr2){
+  
+  if (arr1.length === 0 || arr2.length === 0) {
+    return [];
+  } else {  
+    let arr = [];
+    arr2.map(el => arr.push(arr1[el]))
+    return arr;
+  }  
+}
