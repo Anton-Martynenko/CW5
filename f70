@@ -1,0 +1,5 @@
+function isValidChess960 (pieces) {
+	return pieces.indexOf("R") < pieces.indexOf("K")  
+  && (pieces.indexOf("B") - pieces.lastIndexOf("B")) % 2 !== 0 
+  && pieces.indexOf("K") !== pieces.length - 1 && pieces.indexOf("K") < pieces.lastIndexOf("R");
+}
