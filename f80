@@ -1,0 +1,13 @@
+function summaryRanges(nums) {
+  nums=[...new Set(nums)]
+  let arr = [];
+  let temp = []
+  for (let i=0;i<nums.length;i++){
+    temp.push(nums[i])
+    if (nums[i+1]-nums[i]!==1){
+      arr.push(temp)
+      temp=[]
+    }
+  }
+  return arr.map(v=>v.length===1?v+'':v[0]+'->'+v[v.length-1])
+}
