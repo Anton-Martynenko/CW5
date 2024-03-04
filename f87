@@ -1,0 +1,55 @@
+function mazeRunner(maze, directions) {
+  let begCell = findCell(2);
+   let endCell = findCell(3);
+   let curCell = begCell;
+ 
+   function findCell(target) {
+     for (let i = 0; i < maze.length; i++) {
+       if (maze[i].indexOf(target) !== -1) {
+         let start = {
+           row: i,//   w   w  w  .d  e  m    o 2  s  .   c o   m
+           col: maze[i].indexOf(target)
+         };
+         return start;
+       }
+     }
+   }
+ 
+  
+ 
+   for (let i = 0; i < directions.length; i++) {
+     switch (directions[i]) {
+       case 'N':
+         curCell.row -= 1;
+         break;
+       case 'W':
+         curCell.col -= 1;
+         break;
+       case 'S':
+         curCell.row += 1;
+         break;
+       case 'E':
+         curCell.col += 1;
+         break;
+       default:
+         return "Error - invalid move";
+     }
+ 
+     
+     if (parseInt(curCell.col, 10) < 0 || curCell.col >= maze[0].length || curCell.row < 0 || curCell.row >= maze.length) {
+       
+       return "Dead";
+ 
+     } else if (maze[curCell.row][curCell.col] == 1) {
+      
+       return "Dead";
+ 
+     } else if (maze[curCell.row][curCell.col] == 3) {
+       
+       return "Finish";
+ 
+     } else if (i === directions.length - 1) {
+       
+       return "Lost";
+     }
+   }
