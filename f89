@@ -1,0 +1,15 @@
+function findRoutes(routes) {
+  const result = []; 
+  routes.map((currentPair) => {      
+      if (!routes.find((point) => point[1] === currentPair[0])) {        
+        result.push(currentPair[0]);
+        result.push(currentPair[1]);
+      }
+    })
+    .map(() => {      
+      routes.map((currentPair) => {        
+        currentPair[0] === result[result.length - 1] && result.push(currentPair[1]);
+      });
+    });
+  return result.join(', ');
+}
