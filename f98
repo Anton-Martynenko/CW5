@@ -1,0 +1,7 @@
+function nexus(users) {
+  let obj = Object.keys(users);
+  let obj2 = Object.values(users);
+  let arr = obj.map((v, i) => Math.abs(v * 1 - obj2[i]));
+  let index = arr.indexOf(Math.min(...arr.map(v => Math.abs(v))));
+  return obj[index] * 1;
+}
