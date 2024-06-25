@@ -1,0 +1,4 @@
+function ranks(a) {
+  let sortedA = a.slice().sort((a, b) => b - a);
+  return a.map(v => sortedA.indexOf(v) + 1);
+}
