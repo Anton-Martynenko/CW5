@@ -1,0 +1,14 @@
+function getDiagonalCode(grid) {
+  if (!grid) return '';
+  let arr = grid.split('\n').map(it => it.replace(/\s/g, "")),
+      i = 0, j = 0, k = 0, output = '', direction = true;
+  if (arr.length == 1) return arr[0][0];
+  while (arr[i][j] != undefined){
+    (i == arr.length - 1) ? direction = false : '';
+    (i == 0) ? direction = true : '';
+    output += arr[i][j];
+    direction ? i++ : i--;
+    j++;
+  }
+  return output;
+}
