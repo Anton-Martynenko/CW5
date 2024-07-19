@@ -1,0 +1,4 @@
+function charCheck(text, max, spaces){
+  text = spaces? text : text.replace(/ /g, '');
+  return [text.length <= max, text.substring(0, max)]
+};
