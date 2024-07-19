@@ -1,0 +1,6 @@
+function charCheck(text, max, spaces){
+  if (!spaces) {
+    text = text.replace(/\s+/g,'');
+  }
+  return [text.length <= max,text.slice(0,max)];
+};
