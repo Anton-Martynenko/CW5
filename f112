@@ -1,0 +1,15 @@
+function stringParse(string){
+  if (typeof string !== 'string') return "Please enter a valid string"
+  let arr = [];
+  let str = '';
+  for (let i = 0; i < string.length; i++){
+    if (string[i-1] === string[i]){
+      str+=string[i]
+    }else {
+      arr.push(str);
+      str = string[i];
+    }
+    if (i === string.length-1){arr.push(str)}
+  }
+  return arr.map(v => v.length > 2 ? v.slice(0,2) + '['+v.slice(2)+']' : v).join``;
+}
